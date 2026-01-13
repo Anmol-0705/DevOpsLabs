@@ -1,0 +1,11 @@
+name: API Gateway CI/CD
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build API Gateway
+        run: docker build -t api-gateway ./api-gateway
