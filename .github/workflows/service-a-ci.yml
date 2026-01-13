@@ -1,0 +1,11 @@
+name: Service A CI/CD
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Service A
+        run: docker build -t service-a ./microservices/service-a
