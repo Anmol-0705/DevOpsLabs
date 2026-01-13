@@ -1,0 +1,18 @@
+name: Monolithic Application CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Monolithic Docker Image
+        run: docker build -t monolithic-app ./monolithic-app
